@@ -16,5 +16,16 @@ namespace DogApp.Tests
 
             Assert.Equal(3, result.Count);
         }
+
+        [Fact]
+        public void FindById_Returns_Correct_Dog()
+        {
+            var underTest = new DogRepository();
+
+            var result = underTest.FindById(1);
+
+            Assert.Equal(1, result.Id);
+            Assert.Equal("Kujo", result.Name);
+        }
     }
 }

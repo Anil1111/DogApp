@@ -23,7 +23,8 @@ namespace DogApp.Controllers
 
         public ViewResult Details(int id)
         {
-            return View();
+            var model = dogRepo.FindById(id);
+            return View(model);
         }
     }
 }

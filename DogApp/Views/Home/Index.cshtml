@@ -15,7 +15,9 @@
     @foreach (var dog in Model)
     {
         <div>
-            @dog.Name
+            <a href="/Home/Details/@dog.Id">
+                @dog.Name
+            </a>
         </div>
     }
 
