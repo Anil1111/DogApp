@@ -8,21 +8,21 @@ namespace DogApp
 {
     public class DogRepository : IDogRepository
     {
-        List<Dog> allDogs = new List<Dog>()
+        Dictionary<int, Dog> allDogs = new Dictionary<int, Dog>()
         {
-            new Dog() {Id = 1, Name = "Kujo"},
-            new Dog() {Id = 2, Name = "Shoober"},
-            new Dog() {Id = 3, Name = "Fido"},
+            { 1, new Dog() {Id = 1, Name = "Kujo"} },
+            { 2, new Dog() {Id = 2, Name = "Shoober"} },
+            { 3, new Dog() {Id = 3, Name = "Fido"} },
         };
 
         public Dog FindById(int id)
         {
-            return allDogs[id - 1];
+            return allDogs[id];
         }
 
         public List<Dog> GetAll()
         {
-            return allDogs;
+            return allDogs.Values.ToList();
         }
     }
 }
